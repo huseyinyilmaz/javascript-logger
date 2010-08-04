@@ -1,0 +1,19 @@
+jsLogger - Javascript logger object
+
+*	About jsLogger
+	jsLogger is a javascript logger object that uses development console to log messages. 
+* How to use it
+	1)enable logger
+		logger.enableLog = true;
+		if you don't enable it it won't log anything.
+	2)At start of a function start log for current function
+		logger.startLog("FunctionName");
+	3)At the end of e function finich log for current function
+		logger.endLog();
+	4)In this function enter your log messages
+	  logger.log("Some message");
+	  you can also enter object to log
+	  logger.log(myObject);
+	  Sample code can be seen in sample.html
+* Requirements
+	Firefox or Chrome browser
