@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script type="text/javascript" src="logger.js"></script>
+<script type="text/javascript">
+	function someFunction(){
+		logger.startLog("someFunction");
+		logger.log("sample log in Function");
+		logger.log(someFunction);
+		logger.endLog();
+		}
+	logger.enableLog = true;
+	window.onload = function(){
+		logger.startLog("Window.onLoad");
+		someFunction();
+		logger.log("SampleLog");
+		logger.endLog();
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
