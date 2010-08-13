@@ -5,12 +5,14 @@
 	function someFunction(){
 		logger.startLog("someFunction");
 		logger.log("sample log in Function");
+		logger.warn("yes yes");
 		logger.log(someFunction);
 		logger.endLog();
 		}
 	logger.enableLog = true;
 	window.onload = function(){
 		logger.startLog("Window.onLoad");
+		logger.warn("be carryful")
 		someFunction();
 		logger.log("SampleLog");
 		logger.endLog();
