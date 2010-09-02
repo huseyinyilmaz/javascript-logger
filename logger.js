@@ -2,6 +2,7 @@ var logger = function(){
 		var loggedFunctionArray = [];
 	return {
 		enableLog:false,
+		showTiming :false,
 		log: function(message){
 			if (this.enableLog === true && window.console != undefined) {
 				var prefix = "";
@@ -17,20 +18,20 @@ var logger = function(){
 					prefix += "\t";
 				console.warn(prefix + loggedFunctionArray[loggedFunctionArray.length - 1] + " : ", message);
 			}
-		},//log
+		},//warn
 	
 		startLog: function(functionName){
 			if (this.enableLog === true && window.console != undefined) {
 				loggedFunctionArray.push(functionName);
 				this.log("Start");
-				if(console.time)
+				if(this.showTiming === true && console.time)
 					console.time(functionName);
 			};
 		},//startLog
 		endLog: function(){
 			if (this.enableLog === true && window.console != undefined) {
 				this.log("End");
-				if(console.time)
+				if(this.showTiming === true && console.time)
 					console.timeEnd(loggedFunctionArray.pop());
 				else
 					loggedFunctionArray.pop();
