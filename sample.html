@@ -4,41 +4,41 @@
     <script type="text/javascript">
 
     function loopSample(until){
-	  logger.startLog("loopSample");
-	  for(i = 0; i<until;i++){
-	      logger.count("count loop");
-	      logger.assert(i!==5,"i is equal to five");
-	  };
-	  logger.endLog();
+      logger.startLog("loopSample");
+      for(i = 0; i<until;i++){
+          logger.count("count loop");
+          logger.assert(i!==5,"i is equal to five");
+      };
+      logger.endLog();
     };//loopSample
 
     function someFunction(){
-	var obj = {
-	    attr:"some value",
-	    getattr:function(){
-		return attr;
-	    }
-	};
-	logger.startLog("someFunction");
-	logger.log("sample log in Function");
-	logger.log("sample warning with some object",obj);
-	logger.log(someFunction);
-	logger.trace();
-	logger.dir(obj);
-	loopSample(11);
-	logger.endLog();
+    var obj = {
+        attr:"some value",
+        getattr:function(){
+        return attr;
+        }
+    };
+    logger.startLog("someFunction");
+    logger.log("sample log in Function");
+    logger.log("sample warning with some object",obj);
+    logger.log(someFunction);
+    logger.trace();
+    logger.dir(obj);
+    loopSample(11);
+    logger.endLog();
     };
     logger.enableLog = true;
     logger.showTiming = true;
     window.onload = function(){
-	logger.startLog("Window.onLoad");
-	logger.warn("be carryful");
-	logger.error('error example')
-//	logger.profile('Sample Profiling');
-	someFunction();
-//	logger.profileEnd();
-	logger.log("SampleLog");
-	logger.endLog();
+    logger.startLog("Window.onLoad");
+    logger.warn("be carryful");
+    logger.error('error example')
+//  logger.profile('Sample Profiling');
+    someFunction();
+//  logger.profileEnd();
+    logger.log("SampleLog");
+    logger.endLog();
     };
 </script>
 </head>
